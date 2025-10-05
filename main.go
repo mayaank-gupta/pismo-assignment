@@ -16,8 +16,8 @@ func main() {
 	utils.InitLogger()
 	log := utils.GetLogger("main")
 	port := os.Getenv("PORT")
-	router := gin.Default()
-	routes.RegisterRoutes(router)
+	r := gin.Default()
+	routes.RegisterRoutes(r)
 	log.Info(fmt.Sprintf("Starting server on port %s", port))
-	router.Run(":" + port)
+	r.Run(":" + port)
 }
